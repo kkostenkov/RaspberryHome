@@ -1,0 +1,45 @@
+
+# install webcam app:
+
+
+sudo apt-get install fswebcam
+
+it's all simple
+fswebcam image.jpg  # and it shoots an image to current directory
+
+
+
+
+For image stream:
+
+cd /home/pi
+
+touch fswebcam.conf
+sudo nano /home/pi/fswebcam.conf
+
+Edit it like this:
+
+device /dev/video0   #device itself
+pid 9990
+input 0
+loop 10   # capture pic every 10 secs
+skip 20   # skip 20 frames before capture
+resolution 720x576
+top-banner
+title "Stoyanka@RPi"
+timestamp "%d-%m-%Y %H:%M:%S (%Z)"
+palette YUYV
+jpeg 100
+save /home/pi/webcam/capture."%Y%m%d%H%M%S".jpg
+save /usr/share/nginx/www/wc/capture.jpg
+
+
+
+—охран€ем.
+
+ѕо конфигу надеюсь всЄ просто:
+Х device /dev/video0 Ц наше видео устройство
+Х loop 10 Ц захват картинки каждые 10 секунд
+Х skip 20 Ц перед захватом картинки пропускать 20 кадров
+
+http://erdees.ru/it/s-veb-kameryi-na-veb-server/#more-994

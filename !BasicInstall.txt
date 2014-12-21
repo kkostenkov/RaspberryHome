@@ -1,0 +1,49 @@
+Burn Raspbian image (I userd raspbian wheezy) with ImageWriter to SD card. 8+ Gb required.
+
+
+
+Use Putty to connect to raspberry device via SSH
+Login = pi
+Pass = raspberry
+
+"sudo raspi-config"
+
+Expand filesystem
+Add locale
+then reboot
+
+sudo apt-get update
+sudo apt-get upgarade
+
+
+sudo ifconfig    to check network settings
+
+Open
+"sudo nano etc/network/interfaces"   to edit them
+and add:
+
+# local
+auto lo
+iface lo inet loopback
+
+# LAN
+auto eth0
+iface eth0 inet dhcp
+
+OR:
+
+auto eth0
+iface eth0 inet static
+address ÂÀØ_IP
+netmask ÂÀØÀ_ÌÀÑÊÀ
+gateway ÂÀØ_ÂÍÓÒĞÅÍÍÈÉ_ØËŞÇ
+
+# WiFi
+allow-hotplug wlan0
+auto wlan0
+iface wlan0 inet dhcp
+    wpa-ssid “ÈÌß_ÂÀØÅÉ_ÑÅÒÈ”
+    wpa-psk “ÏÀĞÎËÜ_Ê_ÂÀØÅÉ_ÑÅÒÈ”
+_________________________________
+
+
