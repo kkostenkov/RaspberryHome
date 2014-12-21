@@ -1,0 +1,39 @@
+http://chingachgook.net/raspberry-pi/raspberry-pi-ustanovka-veb-servera.html
+
+
+sudo apt-get install nginx
+
+sudo reboot
+
+Then enter Raspberry's IP as browser address. It should display welcome page.
+
+
+Default page local address is
+/usr/share/nginx/www
+
+LEt's change it to    "/home/www"
+
+sudo mkdir /home/www
+
+then edit  /etc/nginx/sites-available/default
+
+change "root /usr/share/nginx/www" to  "root /home/www"
+
+
+_______
+http://www.tizag.com/htmlT/images.php
+
+create index.html  with :
+
+Local Src	Location Description
+src="sunset.gif"	picture file resides in same directory as .html file
+src="pics/sunset.gif"	picture file resides in the pics directory
+src="../sunset.gif"	picture resides one folder "up" from the .html file
+src="../pics/sunset.gif"	picture file resides in the pics directory, one folder "up" from the .html file.
+____________
+
+http://nginx.org/ru/docs/beginners_guide.html#static
+
+
+"nginx -s reload"    restarts server
+

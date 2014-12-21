@@ -1,0 +1,4 @@
+crontab -l    to check if any tasks planned
+crontab -e    to edit
+
+0-59 * * * * pyhton ~/www/webcam/shot.py     # to take shots every minute
