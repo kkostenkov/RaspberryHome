@@ -1,0 +1,22 @@
+http://raspberrywebserver.com/serveradmin/share-your-raspberry-pis-files-and-folders-across-a-network.html
+
+
+sudo apt-get install samba samba-common-bin 
+
+sudo nano /etc/samba/smb.conf & 
+
+
+[PiShare]
+ comment=Raspberry Pi Share
+ path=/home/pi/share
+ browseable=Yes
+ writeable=Yes
+ only guest=no
+ create mask=0777
+ directory mask=0777
+ public=yes  #without login 
+
+then    "service samba restart"
+
+
+http://theurbanpenguin.com/wp/?p=2415
