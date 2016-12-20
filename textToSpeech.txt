@@ -1,0 +1,48 @@
+говорилка
+
+Text to speech
+
+Дополнение: В хабрастатье про Python-скрипт для выдирания голоса из Google Translate все ссылки битые, но есть другой скрипт. Если сидим под Ubuntu:
+sudo apt-get install python-pip
+sudo pip install gTTS
+gtts-cli -t 'привет, это проверка звука' -l ru test.mp3
+
+
+mp3 player
+
+The play command from the sox package will play any file format supported by sox using the default audio device, e.g
+
+$ play something.mp3
+$ play something.wav
+You may need to install extra packages to gain support for all formats, for example on Ubuntu 11.04 the MP3 support is not available until you install libsox-fmt-mp3.
+
+
+запись звука arecord
+http://www.g7smy.co.uk/2013/08/recording-sound-on-the-raspberry-pi/
+
+
+
+Установка сфинкса
+
+https://github.com/cmusphinx/sphinxbase.git
+$ ./autogen.sh
+$ ./configure
+$ make
+$ make check
+$ make install
+
+https://github.com/cmusphinx/pocketsphinx.git
+$ ./autogen.sh
+$ ./configure
+$ make clean all
+$ make check
+$ sudo make install
+
+https://github.com/cmusphinx/pocketsphinx-python.git
+sudo apt-get install -y python python-dev python-pip build-essential swig git
+git clone --recursive https://github.com/bambocher/pocketsphinx-python
+cd pocketsphinx-python
+sudo python setup.py install
+
+Пример:
+http://blog.justsophie.com/python-speech-to-text-with-pocketsphinx/

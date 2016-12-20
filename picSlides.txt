@@ -1,0 +1,3 @@
+$ sudo fbi -T 1 *.jpg   
+показывает картинки из папки. запуск через SSH
+sudo fbi -T 1 -t 10 -autozoom *.jpg
